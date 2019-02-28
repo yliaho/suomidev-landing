@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html",
-    "deploy": "NODE_ENV=production yarn run build && push-dir --dir=dist --branch=gh-pages --cleanup"
+    "dev": "parcel src/index.html --out-dir dist --public-url .",
+    "build": "parcel build src/index.html --out-dir dist --public-url .",
+    "clean": "trash dist",
+    "deploy": "NODE_ENV=production run-s clean build && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "lint-staged": {
     "*.{js,json,css,scss,md}": [
@@ -21,6 +22,7 @@
     "parcel-bundler": "^1.11.0",
     "prettier": "^1.16.4",
     "push-dir": "^0.4.1",
-    "sass": "^1.17.2"
+    "sass": "^1.17.2",
+    "trash-cli": "^1.4.0"
   }
 }
