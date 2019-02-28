@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --out-dir dist",
+    "build": "node scripts/build.js",
     "clean": "trash dist",
     "deploy": "NODE_ENV=production run-s clean build && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
