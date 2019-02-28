@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel src/index.html --out-dir dist --public-url .",
-    "build": "parcel build src/index.html --out-dir dist --public-url .",
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html --out-dir dist --public-url suomidev-landing",
     "clean": "trash dist",
     "deploy": "NODE_ENV=production run-s clean build && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
