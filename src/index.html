@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script src="//twemoji.maxcdn.com/2/twemoji.min.js?11.3"></script>
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
@@ -14,7 +15,6 @@
       <template class="t-pending-flash">
         <div class="pending-flash flash">
           <span>Viestiä lähetetään...</span>
-          <svg class="spinner" height="25" viewBox="0 0 16 16" width="25" xmlns="http://www.w3.org/2000/svg"><path d="M8 0A8 8 0 0 0 .002 7.812C.094 4.033 2.968 1 6.5 1 10.09 1 13 4.134 13 8a1.5 1.5 0 0 0 3 0 8 8 0 0 0-8-8zm0 16a8 8 0 0 0 7.998-7.812C15.906 11.967 13.032 15 9.5 15 5.91 15 3 11.866 3 8a1.5 1.5 0 0 0-3 0 8 8 0 0 0 8 8z" fill="white"/></svg>
         </div>
       </template>
       <template class="t-response-flash">
@@ -85,28 +85,35 @@
           <div class="title-wrapper">
             <h1>suomi<span>.dev</span>
             </h1>
-            <span>Mitäköhän tällä domainilla tekisi. 🤔</span>
+            <span>Mitäköhän tällä domainilla tekisi.
+              <span>🤔</span>
+            </span>
           </div>
           <div class="contact-form-wrapper">
-            <h3>Ota yhteyttä</h3>
+            <h3>Ota yhteyttä!</h3>
             <form accept-charset="UTF-8" id="contactForm" name="contactForm" onsubmit="handleSubmit(event)">
-              <div class="form-field">
-                <label>
-                  Sähköpostisi
-                </label>
-                <input id="from" placeholder="Sinun Sähköposti" type="email"></input>
-              </div>
-              <div class="form-field">
-                <label>
-                  Viesti
-                </label>
-                <textarea id="text" placeholder="Viesti" rows="4"></textarea>
+              <div class="fields">
+                <div class="form-field">
+                  <label>
+                    Sähköpostisi
+                  </label>
+                  <input id="from" placeholder="Sinun Sähköposti" type="email"></input>
+                </div>
+                <div class="form-field">
+                  <label>
+                    Viesti
+                  </label>
+                  <textarea horizontal="false" id="text" placeholder="Viesti" resize rows="4"></textarea>
+                  <div class="l-count">
+                    <span>0/500</span>
+                  </div>
+                </div>
               </div>
               <div class="control">
-                <input type="submit" value="Lähetä"></input>
-              </div>
-              <div class="form-state-wrapper">
-                <div></div>
+                <div class="form-state-wrapper">
+                  <div></div>
+                </div>
+                <button type="submit" value="Lähetä">Lähetä</button>
               </div>
             </form>
           </div>

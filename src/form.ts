@@ -64,7 +64,11 @@ let currentState: ICurrentState = {
   step: 'initial'
 }
 
+const formElement = document.querySelector('form#contactForm')
 const formStateElement = document.querySelector('.form-state-wrapper')
+const submitButton = document.querySelector(
+  'button[type="submit"]'
+) as HTMLButtonElement
 
 function setState(newState: ICurrentState) {
   currentState = newState
@@ -73,8 +77,10 @@ function setState(newState: ICurrentState) {
   try {
     switch (newState.step) {
       case 'initial':
+        submitButton.disabled = false
         break
       case 'pending':
+        submitButton.disabled = true
         formStateElement.appendChild(
           createFlashElFragment(
             'template.t-pending-flash',
@@ -83,6 +89,8 @@ function setState(newState: ICurrentState) {
         )
         return 'pending'
       case 'success':
+        submitButton.disabled = true
+
         formStateElement.appendChild(
           createFlashElFragment(
             'template.t-response-flash',
@@ -91,6 +99,7 @@ function setState(newState: ICurrentState) {
         )
         return 'success'
       case 'error':
+        submitButton.disabled = false
         formStateElement.appendChild(
           createFlashElFragment('.t-response-flash', newState.error.message)
         )

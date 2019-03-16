@@ -17,7 +17,10 @@ body {
 }
 ul {
   list-style: square;
-  padding-left: 1rem;
+  padding-left: 1.2rem;
+  @media screen and (min-width: 768px) {
+    padding-left: 2.5rem;
+  }
   li {
     list-style: square;
   }
@@ -44,6 +47,8 @@ textarea {
   padding: 0.9rem 1.1rem;
   border-radius: 8px;
   background-color: white;
+  resize: vertical;
+  overflow-x: auto;
   &::placeholder {
     font-weight: 100;
     letter-spacing: -0.5px;
@@ -58,26 +63,36 @@ textarea {
 * {
   &:focus {
     outline: 0;
-    box-shadow: 0 0 0px 4px rgba(#01ffb3, 1);
+    box-shadow: 0 0 0px 4px HSLA(203, 100%, 60%, 1);
+    border-radius: 8px;
   }
 }
 
-input[type='submit'] {
+button {
   font-size: 1rem;
-  background-color: hsl(162, 100%, 50%);
+  background-color: HSLA(162, 99%, 46%, 1);
   font-weight: 500;
-  padding: 0.5rem;
   border-radius: 8px;
+  padding: 1rem;
+  &:after {
+    content: '';
+    display: inline-block;
+    background-image: url('../public/send.svg');
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-left: 1ex;
+    margin-bottom: -0.4rem;
+    background-size: cover;
+  }
+  &:disabled {
+    visibility: hidden;
+  }
 }
 
 #app {
   display: flex;
   flex-wrap: wrap;
   // justify-content: center;
-  @media screen and (min-width: 768px) {
-    align-content: flex-end;
-  }
-  height: 100vh;
 }
 
 .moomin-wrapper {
@@ -91,11 +106,16 @@ input[type='submit'] {
     margin-top: 0rem;
     margin-bottom: 0rem;
   }
+  @media screen and (min-width: 1400px) {
+    justify-content: flex-end;
+    margin-right: 4rem;
+  }
   svg {
     height: 50vh;
     @media screen and (min-width: 768px) {
-      width: 100%;
-      max-width: 420px;
+      width: calc(100% - 4rem);
+      height: initial;
+      max-width: 460px;
     }
     max-height: calc(100vw - 3rem);
 
@@ -127,8 +147,14 @@ main {
   align-items: center;
 
   @media screen and (min-width: 768px) {
+    padding-top: 4rem;
     width: 50%;
-    margin-top: calc(80px + 1rem);
+    height: 100vh;
+    overflow-y: auto;
+  }
+  @media screen and (min-width: 1400px) {
+    align-items: flex-start;
+    margin-left: 4rem;
   }
   .container {
     width: 100%;
@@ -142,8 +168,12 @@ main {
       justify-content: center;
       align-items: center;
       margin-bottom: 4rem;
+
+      @media screen and (min-width: 768px) {
+        align-items: flex-start;
+      }
       h1 {
-        font-size: 2rem;
+        font-size: 3rem;
         font-weight: 500;
         line-height: 1.5;
         span {
@@ -151,13 +181,24 @@ main {
         }
       }
 
-      span {
-        font-weight: 100;
+      > span {
+        font-weight: 400;
+        font-size: 1.1rem;
+        > span {
+          font-size: 1.5rem;
+          vertical-align: middle;
+        }
       }
     }
 
     .contact-form-wrapper {
       margin: 0 2rem;
+
+      h3 {
+        font-weight: 500;
+        font-size: 1.15rem;
+        line-height: 1.6rem;
+      }
 
       form {
         display: flex;
@@ -169,32 +210,40 @@ main {
         .form-field {
           display: flex;
           flex-direction: column;
-          margin: 0.5rem 0;
+          &:not(:last-of-type) {
+            margin: 0.6rem 0;
+          }
 
           label {
             display: none;
           }
         }
 
+        .l-count {
+          font-size: 0.7rem;
+          font-variant-numeric: tabular-nums;
+          margin-top: 0.6rem;
+          text-align: right;
+          color: rgba(white, 0.8);
+          letter-spacing: 1px;
+        }
+
         .control {
-          text-align: center;
-          margin: 1rem 0;
+          text-align: right;
+          margin: 0.6rem 0;
+          display: flex;
+          justify-content: space-between;
 
           input {
             padding: 1rem;
-            width: 120px;
-            max-width: 90%;
+            width: 200px;
+            max-width: 80%;
           }
         }
 
         .form-state-wrapper {
-          height: 80px;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          right: 0;
-          display: flex;
-          flex-direction: column;
+          display: inline-block;
+          font-size: 1;
         }
       }
     }
@@ -202,10 +251,8 @@ main {
 }
 
 .flash {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: left;
+  font-size: 0.9rem;
   span {
     font-weight: 500;
   }
@@ -216,6 +263,7 @@ main {
     margin-bottom: 1rem;
   }
   .spinner {
+    width: 1rem;
     animation: spin 1.3s linear forwards infinite;
 
     @keyframes spin {
@@ -231,8 +279,38 @@ main {
 }
 
 footer {
-  width: 100vw;
-  margin: 1rem 0;
+  margin-bottom: 2rem;
+  @media screen and (min-width: 768px) {
+    transform: skewY(-10deg);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.4rem 0 1rem 0;
+    width: 300px;
+    // background-color: white;
+    color: white;
+    // box-shadow: 0 0 0 6px HSLA(218, 99%, 25%, 1);
+
+    &:after {
+      // content: '';
+      position: absolute;
+      background-color: HSLA(242, 54%, 84%, 1);
+      bottom: 7.1rem;
+      box-shadow: 0 0 0 6px HSLA(218, 99%, 25%, 1);
+      left: -7rem;
+      width: 130px;
+      height: 130px;
+      transform: skewX(60deg);
+    }
+
+    .contact {
+      margin-top: 0.5rem;
+      // margin-left: -1rem;
+      transform: skewY(10deg);
+    }
+  }
+
   .contact {
     padding: 0rem 2rem;
     display: flex;
@@ -241,11 +319,14 @@ footer {
     line-height: 1.8em;
     @media screen and (min-width: 768px) {
       font-size: 0.8rem;
+      transform: skewX(-5deg);
     }
     h2 {
-      font-size: 1rem;
-      font-weight: 500;
-      line-height: 2em;
+      font-size: 1.65rem;
+      letter-spacing: -1;
+      // width: 400px;
+      font-weight: 700;
+      line-height: 1.8em;
     }
     @media screen and (min-width: 768px) {
       padding: 0rem 3rem;
