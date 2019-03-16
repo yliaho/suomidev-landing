@@ -1,0 +1,13 @@
+{
+  "name": "functions",
+  "version": "1.0.0",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "escape-html": "^1.0.3",
+    "isemail": "^3.2.0",
+    "nodemailer": "^5.1.1",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  }
+}

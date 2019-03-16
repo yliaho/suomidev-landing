@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136121148-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag('js', new Date());
-      gtag('config', 'UA-136121148-1');
-    </script>
     <meta charset="UTF-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
     <title>Suomalaista Devausta</title>
     <meta content="#002E83" name="theme-color"/>
     <meta content="Mitäköhän tällä domainilla tekisi?" name="description"/>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lf4t5cUAAAAAAXobYFKKYSQ0MHYIrvaHD1ISGEL"></script>
   </head>
   <body>
     <div id="app">
+      <template class="t-pending-flash">
+        <div class="pending-flash flash">
+          <span>Viestiä lähetetään...</span>
+          <svg class="spinner" height="25" viewBox="0 0 16 16" width="25" xmlns="http://www.w3.org/2000/svg"><path d="M8 0A8 8 0 0 0 .002 7.812C.094 4.033 2.968 1 6.5 1 10.09 1 13 4.134 13 8a1.5 1.5 0 0 0 3 0 8 8 0 0 0-8-8zm0 16a8 8 0 0 0 7.998-7.812C15.906 11.967 13.032 15 9.5 15 5.91 15 3 11.866 3 8a1.5 1.5 0 0 0-3 0 8 8 0 0 0 8 8z" fill="white"/></svg>
+        </div>
+      </template>
+      <template class="t-response-flash">
+        <div class="response-flash flash">
+          <span>Kiitos! Viestisi on lähetetty.</span>
+        </div>
+      </template>
       <div class="moomin-wrapper">
         <svg viewBox="0 0 654 632" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -30,19 +33,19 @@
           <g fill-rule="evenodd" fill="none">
             <path d="M552.78 344.412L274.567 0H0l15.268 84.771 80.166 445.108L500.63 531l57.877-92.836c18.254-29.28 15.956-66.91-5.726-93.752z" fill="#02EBA3"/>
             <g transform="translate(109.05 208.248)">
-              <use fill="#B6F3F1" stroke-width="3" stroke="#003181" xlink:href="#a"/>
+              <use fill="#B6F3F1" stroke-width="6" stroke="#003181" xlink:href="#a"/>
               <use fill="#FFF" xlink:href="#b"/>
             </g>
             <g class="moomin-head">
-              <path d="M216.216 81.621c9.823-28.054 19.06-42.121 28.417-42.121h.479l.39.277c5.396 3.834 11.21 23.455 18.053 59.829l.264 1.408-28.892 6.82-18.975-25.46.264-.753z" fill="#B6F3F1" stroke-width="3" stroke="#003181"/>
-              <path d="M328.745 180.32c17.86 3.37 41.046 12.512 57.872 24.349 22.79 16.031 33.34 35.798 27.058 58.531-6.295 22.786-27.298 42.893-57.348 58.232-24.928 12.724-54.196 20.821-72.84 20.821-18.843 0-46.176-7.518-69.359-19.859-28.016-14.914-47.82-35.196-54.597-59.185-4.362-15.44-8.311-41.117-10.038-66.512-2.013-29.603-.937-55.98 3.703-74.227.232-.915.218-1.187-.53-11.777-.401-5.664-.609-9.909-.632-14.161-.03-5.793.317-10.744 1.145-14.875 3.166-15.814 4.916-19.771 11.607-26.358l.377-.37.526-.054c1.729-.172 3.457.228 5.214 1.139 2.02 1.047 4.056 2.74 6.458 5.231.943.979 1.922 2.056 3.17 3.476.477.543 2.637 3.024 3.23 3.698 9.098 10.333 15.01 14.1 22.506 12.084l.167-.035c20.923-3.142 26.28-3.142 43.068.009l.295.056.251.165c9.592 6.3 16.594 15.097 30.552 36.105l.836 1.259c4.577 6.89 6.81 10.188 9.5 13.945 4.656 6.504 17.28 25.579 19.344 28.488 6.285 8.86 11.69 14.8 18.465 19.824z" fill="#B6F3F1" stroke-width="3" stroke="#003181"/>
+              <path d="M216.216 81.621c9.823-28.054 19.06-42.121 28.417-42.121h.479l.39.277c5.396 3.834 11.21 23.455 18.053 59.829l.264 1.408-28.892 6.82-18.975-25.46.264-.753z" fill="#B6F3F1" stroke-width="6" stroke="#003181"/>
+              <path d="M328.745 180.32c17.86 3.37 41.046 12.512 57.872 24.349 22.79 16.031 33.34 35.798 27.058 58.531-6.295 22.786-27.298 42.893-57.348 58.232-24.928 12.724-54.196 20.821-72.84 20.821-18.843 0-46.176-7.518-69.359-19.859-28.016-14.914-47.82-35.196-54.597-59.185-4.362-15.44-8.311-41.117-10.038-66.512-2.013-29.603-.937-55.98 3.703-74.227.232-.915.218-1.187-.53-11.777-.401-5.664-.609-9.909-.632-14.161-.03-5.793.317-10.744 1.145-14.875 3.166-15.814 4.916-19.771 11.607-26.358l.377-.37.526-.054c1.729-.172 3.457.228 5.214 1.139 2.02 1.047 4.056 2.74 6.458 5.231.943.979 1.922 2.056 3.17 3.476.477.543 2.637 3.024 3.23 3.698 9.098 10.333 15.01 14.1 22.506 12.084l.167-.035c20.923-3.142 26.28-3.142 43.068.009l.295.056.251.165c9.592 6.3 16.594 15.097 30.552 36.105l.836 1.259c4.577 6.89 6.81 10.188 9.5 13.945 4.656 6.504 17.28 25.579 19.344 28.488 6.285 8.86 11.69 14.8 18.465 19.824z" fill="#B6F3F1" stroke-width="6" stroke="#003181"/>
               <path d="M258.083 96.776c14.109 9.268 25.327 30.144 37.59 47.273 14.546 20.319 21.204 34.731 35.661 45.344 26.024 4.823 90.6 29.907 78.07 75.25C396.874 309.987 321.696 337 289.89 337c-31.807 0-87.238-8.601-100.732-56.357-7.638-27.03-18.233-94.62-5.871-129.914 4.213-21.729 18.062-49.323 35.28-53.953 19.276-2.894 24.095-2.894 39.516 0z" fill="#FFF"/>
-              <path d="M212 162.891c.682-10.509 7.164-15.763 19.446-15.763M253.671 147.128c5.583-13.275 13.609-14.673 24.077-4.193M176 105.703l13-8.708c-11.038-13.415-17.27-21.613-18.693-24.594-2.137-4.472-12.285 29.625-4.273 43.599" stroke-width="3" stroke="#003181"/>
+              <path d="M212 162.891c.682-10.509 7.164-15.763 19.446-15.763M253.671 147.128c5.583-13.275 13.609-14.673 24.077-4.193M176 105.703l13-8.708c-11.038-13.415-17.27-21.613-18.693-24.594-2.137-4.472-12.285 29.625-4.273 43.599" stroke-width="6" stroke="#003181"/>
               <g transform="translate(211.992 162.713)">
                 <mask fill="#fff" id="d">
                   <use xlink:href="#c"/>
                 </mask>
-                <use fill="#CAE5FF" stroke-width="3" stroke="#003181" transform="rotate(-9 27.127 33.552)" xlink:href="#c"/>
+                <use fill="#CAE5FF" stroke-width="5" stroke="#003181" transform="rotate(-9 27.127 33.552)" xlink:href="#c"/>
                 <ellipse cx="29.008" cy="37.287" fill="#FFF" mask="url(#d)" rx="20" ry="25"/>
                 <ellipse cx="38.345" cy="50.099" fill="#003181" mask="url(#d)" rx="12.562" ry="15.588"/>
               </g>
@@ -50,25 +53,25 @@
                 <mask fill="#fff" id="f">
                   <use xlink:href="#e"/>
                 </mask>
-                <use fill="#CAE5FF" stroke-width="3" stroke="#003181" transform="rotate(-9 24.077 29.21)" xlink:href="#e"/>
+                <use fill="#CAE5FF" stroke-width="5" stroke="#003181" transform="rotate(-9 24.077 29.21)" xlink:href="#e"/>
                 <ellipse cx="26.289" cy="32.915" fill="#FFF" mask="url(#f)" rx="17" ry="21.5"/>
                 <ellipse cx="31.851" cy="44.003" fill="#003181" mask="url(#f)" rx="12.562" ry="15.588"/>
               </g>
             </g>
             <g>
-              <path d="M358.757 433.278L95 530.038l410.306 25.73L650 337.388z" fill="#C3C1ED" stroke-width="3" stroke="#003181"/>
+              <path d="M358.757 433.278L95 530.038l410.306 25.73L650 337.388z" fill="#C3C1ED" stroke-width="6" stroke="#003181"/>
               <path d="M473.584 577.547l-111.509 12.35 55.755 35.507 55.754-47.857zM362.255 607l9.358 24.186H333z" fill="#C3C1ED"/>
               <path d="M283.486 496.713l84.916 48.032v5.857l-66.155 28.116-69.668-62.09v-4.1z" fill="#A895F5"/>
               <path d="M286.413 499.642l84.916 48.031v5.858l-104.337 36.182-34.413-73.084 2.927-1.172z" fill="#003181"/>
-              <path d="M285.353 496.046l82.264 46.532a4.5 4.5 0 0 1 2.285 3.916v2.128a4.5 4.5 0 0 1-2.73 4.138l-66.248 28.335a4.5 4.5 0 0 1-4.9-.906l-63.576-61.599a4.5 4.5 0 0 1-1.369-3.232v-.78a4.284 4.284 0 0 1 3.013-4.09l47.71-14.823a4.5 4.5 0 0 1 3.551.381z" fill="#A895F5" stroke-width="3" stroke="#003181"/>
+              <path d="M285.353 496.046l82.264 46.532a4.5 4.5 0 0 1 2.285 3.916v2.128a4.5 4.5 0 0 1-2.73 4.138l-66.248 28.335a4.5 4.5 0 0 1-4.9-.906l-63.576-61.599a4.5 4.5 0 0 1-1.369-3.232v-.78a4.284 4.284 0 0 1 3.013-4.09l47.71-14.823a4.5 4.5 0 0 1 3.551.381z" fill="#A895F5" stroke-width="6" stroke="#003181"/>
               <path d="M289.367 500.228l72.708 41.002-62.699 28.27-62.699-54.408z" fill="#0072FF"/>
               <g>
                 <path d="M392.04 514.35l179.959-99.056v-11.867L392.04 493.511z" fill="#003181"/>
-                <path d="M392.086 499.457v12.538l-115.013-41.792v-5.572l176.082-62.224 117.012 4.838z" fill="#A895F5" stroke-width="3" stroke="#003181"/>
+                <path d="M392.086 499.457v12.538l-115.013-41.792v-5.572l176.082-62.224 117.012 4.838z" fill="#A895F5" stroke-width="6" stroke="#003181"/>
                 <path d="M390.992 479.465l-81.72-7.986v8.833l-64.399-5.272 11.71-3.561-70.84-23.446 90.257-40z" fill="#003181"/>
-                <path d="M225.815 381.32L423.6 453.276h-36.475l29.283 10.993h-35.962l20.55 14.825-215.253-31.061M368.987 371.948l87.432 50.042-37.583 22.128-29.861-22.128z" fill="#FFF" stroke-width="3" stroke="#003181"/>
+                <path d="M225.815 381.32L423.6 453.276h-36.475l29.283 10.993h-35.962l20.55 14.825-215.253-31.061M368.987 371.948l87.432 50.042-37.583 22.128-29.861-22.128z" fill="#FFF" stroke-width="6" stroke="#003181"/>
                 <g>
-                  <path d="M390.649 512.177l12.521-185.74 185.358-89.949-13.127 176.585-172.23 103.748z" fill="#A895F5" stroke-width="3" stroke="#003181"/>
+                  <path d="M390.649 512.177l12.521-185.74 185.358-89.949-13.127 176.585-172.23 103.748z" fill="#A895F5" stroke-width="6" stroke="#003181"/>
                   <path d="M402 499.389l9.745-144.441L556 285l-10.216 137.32L411.745 503z" fill="#7780E1"/>
                   <path d="M562.769 399.479l-33.956 19.33 4.098-46.682 36.883-16.58z" fill="#FFFA93"/>
                 </g>
@@ -77,25 +80,47 @@
           </g>
         </svg>
       </div>
-      <div class="bottom">
-        <div class="left">
-          <h1>suomi.dev</h1>
-          <h2>Mitäköhän tällä domainilla tekisi? 🤔</h2>
-        </div>
-        <div class="right">
-          <div class="text-wrapper">
-            <span class="name">
-              Joonas Yliaho
-            </span>
-            <span class="website">
-              <a href="https://github.com/yliaho" rel="noopener" target="_blank">github.com/yliaho</a>
-            </span>
-            <span class="email">
-              <a href="mailto:joonas.yliaho@gmail.com">joonas.yliaho@gmail.com</a>
-            </span>
+      <main>
+        <div class="container">
+          <div class="title-wrapper">
+            <h1>suomi<span>.dev</span>
+            </h1>
+            <span>Mitäköhän tällä domainilla tekisi. 🤔</span>
+          </div>
+          <div class="contact-form-wrapper">
+            <h3>Ota yhteyttä</h3>
+            <form accept-charset="UTF-8" id="contactForm" name="contactForm" onsubmit="handleSubmit(event)">
+              <div class="form-field">
+                <label>
+                  Sähköpostisi
+                </label>
+                <input id="from" placeholder="Sinun Sähköposti" type="email"></input>
+              </div>
+              <div class="form-field">
+                <label>
+                  Viesti
+                </label>
+                <textarea id="text" placeholder="Viesti" rows="4"></textarea>
+              </div>
+              <div class="control">
+                <input type="submit" value="Lähetä"></input>
+              </div>
+              <div class="form-state-wrapper">
+                <div></div>
+              </div>
+            </form>
           </div>
         </div>
-      </div>
+      </main>
+      <footer>
+        <div class="contact">
+          <h2 class="my-name">Joonas Yliaho</h2>
+          <ul>
+            <li><a href="mailto:joonas.yliaho@gmail.com">joonas.yliaho@gmail.com</a></li>
+            <li><a href="https://github.com/yliaho" rel="noopener noreferrer" target="_blank">github.com/yliaho</a></li>
+          </ul>
+        </div>
+      </footer>
     </div>
     <script src="./index.ts"></script>
   </body>

@@ -7,7 +7,8 @@
     "dev": "parcel src/index.html",
     "build": "node scripts/build.js",
     "clean": "trash dist",
-    "deploy": "NODE_ENV=production run-s clean build && push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "NODE_ENV=production run-s clean build && push-dir --dir=dist --branch=gh-pages --cleanup",
+    "deploy:functions": "cd functions/sendMail && gcloud functions deploy sendMail --env-vars-file .env.yaml --runtime nodejs8 --trigger-http"
   },
   "lint-staged": {
     "*.{js,json,css,scss,md}": [
@@ -24,5 +25,8 @@
     "push-dir": "^0.4.1",
     "sass": "^1.17.2",
     "trash-cli": "^1.4.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0"
   }
 }
